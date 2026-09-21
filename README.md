@@ -2,6 +2,12 @@ Local Multi-Document RAG Assistant
 
 A fully local Retrieval-Augmented Generation (RAG) application for uploading, indexing, managing, and querying multiple PDF documents with persistent per-document chat history and source-grounded answers.
 
+Application Screenshot
+
+<p align="center">
+  <img src="assets/app_screenshot.png" alt="Local Multi-Document RAG Assistant" width="900">
+</p>
+
 Features
 
 Upload and manage multiple PDF documents
@@ -195,7 +201,11 @@ RAG_LangChain_Project/
 |
 |-- app.py
 |-- requirements.txt
+|-- requirements-eval.txt
 |-- .gitignore
+|-- README.md
+|-- assets/
+|   `-- app_screenshot.png
 |-- evaluation/
 |   `-- evaluate_rag.py
 |
@@ -244,8 +254,8 @@ Streamlit application development
 
 Persistent local application state
 
-## Author
+Author
 
-**Mohammad Ahmad Elayyan**  
-Intelligent Systems Engineering Graduate  
-GitHub: **@MohammadElayyan117**
+Mohammad Ahmad Elayyan
+Intelligent Systems Engineering Graduate
+GitHub: @MohammadElayyan117
