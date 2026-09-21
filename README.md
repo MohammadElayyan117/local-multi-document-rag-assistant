@@ -243,3 +243,9 @@ RAG evaluation
 Streamlit application development
 
 Persistent local application state
+
+## Author
+
+**Mohammad Ahmad Elayyan**  
+Intelligent Systems Engineering Graduate  
+GitHub: **@MohammadElayyan117**
