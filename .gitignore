@@ -1,0 +1,33 @@
+# Python virtual environments
+.venv/
+.venv_eval/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Uploaded PDF documents
+uploaded_pdfs/
+
+# Local vector databases
+chroma_uploads/
+chroma_db/
+
+# Local user data
+document_registry.json
+chat_histories.json
+evaluation_sample.json
+
+# Environment variables / secrets
+.env
+.env.*
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
