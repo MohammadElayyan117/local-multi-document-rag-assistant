@@ -1,12 +1,25 @@
-<h1 align="center">Local Multi-Document RAG Assistant</h1>
+<div align="center">
+  <h1>🤖 Local Multi-Document RAG Assistant</h1>
+  <p>A fully local Retrieval-Augmented Generation (RAG) application for uploading, indexing, managing, and querying multiple PDF documents with persistent per-document chat history and source-grounded answers.</p>
+  <p><strong>Fully local AI</strong> · <strong>Persistent multi-PDF chat</strong> · <strong>Grounded retrieval</strong> · <strong>RAGAS evaluation</strong></p>
+  <p>  <a href="https://github.com/MohammadElayyan117/local-multi-document-rag-assistant">Source Code</a> · <a href="https://www.linkedin.com/in/mohammadelayyan1/">LinkedIn</a></p>
+  <p><a href="#features">Features</a> · <a href="#architecture">Architecture</a> · <a href="#benchmark-results">Benchmark Results</a> · <a href="#installation">Installation</a></p>
+</div>
 
-<p align="center">
-A fully local Retrieval-Augmented Generation (RAG) application for uploading, indexing, managing, and querying multiple PDF documents with persistent per-document chat history and source-grounded answers.
-</p>
-
-<p align="center">
-  <a href="https://github.com/MohammadElayyan117/local-multi-document-rag-assistant">GitHub</a> · <a href="https://www.linkedin.com/in/mohammadelayyan1/">LinkedIn</a>
-</p>
+<table>
+  <tr>
+    <th align="center">Benchmark Questions</th>
+    <th align="center">Compared Variants</th>
+    <th align="center">RAGAS Metrics</th>
+    <th align="center">Unanswerable Fallback</th>
+  </tr>
+  <tr>
+    <td align="center"><strong>30</strong></td>
+    <td align="center"><strong>6</strong></td>
+    <td align="center"><strong>4</strong></td>
+    <td align="center"><strong>4 / 4</strong></td>
+  </tr>
+</table>
 
 ---
 
@@ -16,32 +29,41 @@ A fully local Retrieval-Augmented Generation (RAG) application for uploading, in
   <img src="assets/app_screenshot.png" alt="Local Multi-Document RAG Assistant" width="900">
 </p>
 
-<p align="center">
-  <a href="#features">Features</a> · <a href="#architecture">Architecture</a> · <a href="#benchmark-results">Benchmark Results</a> · <a href="#installation">Installation</a> · <a href="#author">Author</a>
-</p>
-
 ## Features
 
-- Upload and manage multiple PDF documents
-- Persistent local document storage
-- Separate ChromaDB collection for each PDF
-- Persistent chat history for each document
-- Switch between documents without losing previous conversations
-- Source-grounded answers with page references and retrieved text
-- MMR (Maximal Marginal Relevance) retrieval
-- Short-chunk filtering to reduce low-value context
-- Grounded prompt with a fixed fallback answer when the context does not contain the answer
-- Local LLM inference with Ollama
-- Local embeddings with `nomic-embed-text`
-- RAGAS-based evaluation and benchmark
-- Clear current chat and delete current document controls
-- No cloud API required for the core RAG pipeline
+| Document Management & Experience | Retrieval & AI |
+| :--- | :--- |
+| Upload and manage multiple PDF documents | Source-grounded answers with page references and retrieved text |
+| Persistent local document storage | MMR (Maximal Marginal Relevance) retrieval |
+| Separate ChromaDB collection for each PDF | Short-chunk filtering to reduce low-value context |
+| Persistent chat history for each document | Grounded prompt with a fixed fallback answer when the context does not contain the answer |
+| Switch between documents without losing previous conversations | Local LLM inference with Ollama |
+| Clear current chat and delete current document controls | Local embeddings with `nomic-embed-text` |
+| No cloud API required for the core RAG pipeline | RAGAS-based evaluation and benchmark |
 
 ## Tech Stack
 
-`Python 3.12` · `Streamlit` · `LangChain` · `Ollama` · `Llama 3.1 8B` · `nomic-embed-text` · `ChromaDB` · `PyPDF` · `RAGAS`
+| Application | Retrieval & Models | Evaluation |
+| :--- | :--- | :--- |
+| `Python 3.12` · `Streamlit` · `PyPDF` | `LangChain` · `Ollama` · `Llama 3.1 8B` · `nomic-embed-text` · `ChromaDB` | `RAGAS` |
 
 ## Architecture
+
+```mermaid
+flowchart TD
+    A["PDF Upload"] --> B["Text Extraction (PyPDF)"]
+    B --> C["Recursive Text Splitting<br/>chunk_size=500, overlap=100"]
+    C --> D["Local Embeddings<br/>nomic-embed-text"]
+    D --> E["ChromaDB<br/>separate persistent store per PDF"]
+    E --> F["MMR Retrieval<br/>k=8, fetch_k=15, lambda_mult=0.8"]
+    F --> G["Short-Chunk Filter<br/>>= 120 characters, first 4 chunks"]
+    G --> H["Retrieved Context + Page Metadata"]
+    H --> I["Local LLM<br/>Llama 3.1 8B via Ollama"]
+    I --> J["Grounded Answer + Sources"]
+```
+
+<details>
+<summary>View the original plain-text architecture</summary>
 
 ```text
 PDF Upload
@@ -79,6 +101,8 @@ Local LLM
    v
 Grounded Answer + Sources
 ```
+
+</details>
 
 ## Project Highlights
 
@@ -132,22 +156,20 @@ Variants compared:
 
 Prompt and filtering comparison on the 26 answerable questions (mean of 2 runs):
 
-```text
-Variant       Faithfulness  Relevancy  Context Precision  Factual Correctness
-baseline_a    0.894         0.794      0.861              0.700
-baseline_b    0.917         0.879      0.827              0.759
-final         0.885         0.881      0.861              0.753
-```
+| Variant | Faithfulness | Relevancy | Context Precision | Factual Correctness |
+| :--- | ---: | ---: | ---: | ---: |
+| baseline_a | 0.894 | 0.794 | 0.861 | 0.700 |
+| baseline_b | 0.917 | 0.879 | 0.827 | 0.759 |
+| final | 0.885 | 0.881 | 0.861 | 0.753 |
 
 Additional experiments on all 30 questions (1 run):
 
-```text
-Variant          Faithfulness  Relevancy  Context Precision  Factual Correctness
-final            0.838         0.767      0.861              0.739
-final_k6         0.865         0.746      0.851              0.747
-final_partial    0.886         0.780      0.861              0.737
-final_chunk800   0.880         0.709      0.853              0.696
-```
+| Variant | Faithfulness | Relevancy | Context Precision | Factual Correctness |
+| :--- | ---: | ---: | ---: | ---: |
+| final | 0.838 | 0.767 | 0.861 | 0.739 |
+| final_k6 | 0.865 | 0.746 | 0.851 | 0.747 |
+| final_partial | 0.886 | 0.780 | 0.861 | 0.737 |
+| final_chunk800 | 0.880 | 0.709 | 0.853 | 0.696 |
 
 In the second block, Faithfulness and Relevancy include the 4 unanswerable questions. RAGAS gives a fallback answer a Relevancy of 0 by design, so these values are lower than in the first block. Compare rows within a block, not across blocks.
 
@@ -359,3 +381,5 @@ This project was built as a practical portfolio project to demonstrate hands-on 
 Intelligent Systems Engineering Graduate  
 GitHub: [@MohammadElayyan117](https://github.com/MohammadElayyan117)  
 LinkedIn: [mohammadelayyan1](https://www.linkedin.com/in/mohammadelayyan1/)
+
+<p align="right"><a href="#-local-multi-document-rag-assistant">Back to top ↑</a></p>
