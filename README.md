@@ -18,9 +18,10 @@ A fully local Retrieval-Augmented Generation (RAG) application for uploading, in
 - Source-grounded answers with page references and retrieved text
 - MMR (Maximal Marginal Relevance) retrieval
 - Short-chunk filtering to reduce low-value context
+- Grounded prompt with a fixed fallback answer when the context does not contain the answer
 - Local LLM inference with Ollama
 - Local embeddings with `nomic-embed-text`
-- RAGAS-based evaluation
+- RAGAS-based evaluation and benchmark
 - Clear current chat and delete current document controls
 - No cloud API required for the core RAG pipeline
 
@@ -58,6 +59,11 @@ ChromaDB
    |
    v
 MMR Retrieval
+(k=8, fetch_k=15, lambda_mult=0.8)
+   |
+   v
+Short-Chunk Filter
+(>= 120 characters, first 4 chunks)
    |
    v
 Retrieved Context + Page Metadata
@@ -80,16 +86,83 @@ When the app is restarted, previously saved documents and conversations are rest
 
 RAGAS is used in a separate evaluation environment to avoid dependency conflicts with the main application environment.
 
-Example evaluation result:
+The first evaluation script, `evaluation/evaluate_rag.py`, scores a single question saved by the app. An early run on the question "What is ROS 2?" gave:
 
 ```text
 Faithfulness:       1.0000
 Response Relevancy: 0.8931
 ```
 
+This is a single-question sanity check, not a benchmark.
+
 `Faithfulness` measures whether the generated answer is supported by the retrieved context.
 
 `Response Relevancy` measures how directly the generated response answers the user's question.
+
+## Benchmark
+
+To measure the pipeline on more than one question, a small benchmark was added:
+
+- `golden_set.json`: 30 questions with reference answers, written from one public university lecture PDF on ROS 2 (the PDF is not included in this repository)
+- 20 factual questions, 6 multi-item questions, and 4 questions whose answer is not in the document
+- RAGAS metrics: Faithfulness, Response Relevancy, Context Precision, and Factual Correctness
+- Local judge model: `llama3.1:8b` via Ollama
+- Unanswerable check: how often the model returns the fixed fallback instead of inventing an answer
+
+Variants compared:
+
+- `final`: current pipeline (full grounded prompt, short-chunk filter, 4 context chunks, chunks 500/100)
+- `baseline_a`: simpler prompt without the document name and without the multi-item instruction
+- `baseline_b`: no short-chunk filter
+- `final_k6`: 6 context chunks instead of 4
+- `final_partial`: extra prompt rule for partially covered lists
+- `final_chunk800`: chunk size 800, overlap 150
+
+The two baselines were created for this comparison. They are not historical versions of the app.
+
+## Benchmark Results
+
+Prompt and filtering comparison on the 26 answerable questions (mean of 2 runs):
+
+```text
+Variant       Faithfulness  Relevancy  Context Precision  Factual Correctness
+baseline_a    0.894         0.794      0.861              0.700
+baseline_b    0.917         0.879      0.827              0.759
+final         0.885         0.881      0.861              0.753
+```
+
+Additional experiments on all 30 questions (1 run):
+
+```text
+Variant          Faithfulness  Relevancy  Context Precision  Factual Correctness
+final            0.838         0.767      0.861              0.739
+final_k6         0.865         0.746      0.851              0.747
+final_partial    0.886         0.780      0.861              0.737
+final_chunk800   0.880         0.709      0.853              0.696
+```
+
+In the second block, Faithfulness and Relevancy include the 4 unanswerable questions. RAGAS gives a fallback answer a Relevancy of 0 by design, so these values are lower than in the first block. Compare rows within a block, not across blocks.
+
+Unanswerable questions: all variants returned the fixed fallback answer on 4 out of 4.
+
+Main findings:
+
+- The grounded prompt raised Response Relevancy from about 0.79 to 0.88 on answerable questions, consistently across both runs
+- Factual Correctness improved from about 0.70 to 0.75, but this is less stable
+- Short-chunk filtering slightly raised Context Precision (0.827 to 0.861), a difference of about one question
+- Faithfulness did not separate the variants because run-to-run noise was as large as the differences
+- None of the three extra experiments improved the scores beyond noise (about 0.02 between evaluations)
+- Chunk size 800 retrieved a full list that the default setup missed, but the model also answered "not found" on two answerable questions
+- The extra prompt rule did not stop the 8B model from inventing items for a partially retrieved list
+
+## Benchmark Limitations
+
+- One source PDF and 30 questions (26 answerable)
+- The judge is a local 8B model from the same family as the application model, so scores are noisy
+- Some low scores on correct answers came from the judge, not from the pipeline
+- The questions were inspected while analysing failures, so a held-out question set is still needed
+- `generate_answers.py` re-implements the pipeline instead of importing the Streamlit app
+- No prompt-injection or adversarial testing has been done yet
 
 ## Installation
 
@@ -157,6 +230,24 @@ After the app has generated `evaluation_sample.json`, run:
 .\.venv_eval\Scripts\python.exe .\evaluation\evaluate_rag.py
 ```
 
+## Run the Benchmark
+
+Generate answers in the main environment:
+
+```powershell
+python evaluation\generate_answers.py --pdf path\to\your_document.pdf
+```
+
+Score them in the evaluation environment:
+
+```powershell
+.\.venv_eval\Scripts\python.exe .\evaluation\score_ragas.py --runs 2
+```
+
+Both scripts accept `--variants` to run only some variants, for example `--variants final final_k6`.
+
+`golden_set.json` is specific to the original lecture PDF. For another document, write a new golden set with the same fields: `question`, `reference`, `answerable`, and `source_page`.
+
 ## How to Use
 
 1. Upload a PDF from the sidebar.
@@ -180,13 +271,14 @@ chat_histories.json
 evaluation_sample.json
 ```
 
-These files are excluded from Git through `.gitignore`.
+These files are excluded from Git through `.gitignore`, together with the benchmark PDF, `evaluation/answers.json`, and `evaluation/chroma_bench/`.
 
 ## Current Limitations
 
 - Best suited for PDFs that contain extractable text.
 - Image-only or scanned PDFs are not yet processed with OCR.
 - Retrieval quality depends on the quality and structure of the source PDF.
+- Lists that span several chunks can be incomplete or partly invented by the small local model.
 - The current implementation is designed for local use with Ollama.
 
 ## Project Structure
@@ -204,7 +296,14 @@ RAG_LangChain_Project/
 |   `-- app_screenshot.png
 |
 |-- evaluation/
-|   `-- evaluate_rag.py
+|   |-- evaluate_rag.py
+|   |-- generate_answers.py
+|   |-- score_ragas.py
+|   |-- golden_set.json
+|   |-- results.csv
+|   |-- summary.csv
+|   |-- results_v2.csv
+|   `-- summary_v2.csv
 |
 |-- uploaded_pdfs/          # ignored by Git
 |-- chroma_uploads/         # ignored by Git
@@ -217,8 +316,10 @@ RAG_LangChain_Project/
 ## Future Improvements
 
 - OCR support for scanned PDFs
-- Automated evaluation over a multi-question benchmark set
+- Held-out question set and a second source document
+- Stronger judge model from a different model family
 - Optional reranking
+- Prompt-injection tests
 - Docker support
 - Improved document management UI
 - Exportable evaluation reports
