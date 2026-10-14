@@ -1,11 +1,23 @@
-# Local Multi-Document RAG Assistant
+<h1 align="center">Local Multi-Document RAG Assistant</h1>
 
+<p align="center">
 A fully local Retrieval-Augmented Generation (RAG) application for uploading, indexing, managing, and querying multiple PDF documents with persistent per-document chat history and source-grounded answers.
+</p>
+
+<p align="center">
+  <a href="https://github.com/MohammadElayyan117/local-multi-document-rag-assistant">GitHub</a> · <a href="https://www.linkedin.com/in/mohammadelayyan1/">LinkedIn</a>
+</p>
+
+---
 
 ## Application Screenshot
 
 <p align="center">
   <img src="assets/app_screenshot.png" alt="Local Multi-Document RAG Assistant" width="900">
+</p>
+
+<p align="center">
+  <a href="#features">Features</a> · <a href="#architecture">Architecture</a> · <a href="#benchmark-results">Benchmark Results</a> · <a href="#installation">Installation</a> · <a href="#author">Author</a>
 </p>
 
 ## Features
@@ -27,15 +39,7 @@ A fully local Retrieval-Augmented Generation (RAG) application for uploading, in
 
 ## Tech Stack
 
-- Python 3.12
-- Streamlit
-- LangChain
-- Ollama
-- Llama 3.1 8B
-- nomic-embed-text
-- ChromaDB
-- PyPDF
-- RAGAS
+`Python 3.12` · `Streamlit` · `LangChain` · `Ollama` · `Llama 3.1 8B` · `nomic-embed-text` · `ChromaDB` · `PyPDF` · `RAGAS`
 
 ## Architecture
 
@@ -82,6 +86,8 @@ The application is designed as a general multi-document RAG system rather than a
 
 When the app is restarted, previously saved documents and conversations are restored automatically.
 
+---
+
 ## RAG Evaluation
 
 RAGAS is used in a separate evaluation environment to avoid dependency conflicts with the main application environment.
@@ -93,7 +99,7 @@ Faithfulness:       1.0000
 Response Relevancy: 0.8931
 ```
 
-This is a single-question sanity check, not a benchmark.
+> This is a single-question sanity check, not a benchmark.
 
 `Faithfulness` measures whether the generated answer is supported by the retrieved context.
 
@@ -118,7 +124,9 @@ Variants compared:
 - `final_partial`: extra prompt rule for partially covered lists
 - `final_chunk800`: chunk size 800, overlap 150
 
-The two baselines were created for this comparison. They are not historical versions of the app.
+> The two baselines were created for this comparison. They are not historical versions of the app.
+
+---
 
 ## Benchmark Results
 
@@ -163,6 +171,8 @@ Main findings:
 - The questions were inspected while analysing failures, so a held-out question set is still needed
 - `generate_answers.py` re-implements the pipeline instead of importing the Streamlit app
 - No prompt-injection or adversarial testing has been done yet
+
+---
 
 ## Installation
 
@@ -281,6 +291,8 @@ These files are excluded from Git through `.gitignore`, together with the benchm
 - Lists that span several chunks can be incomplete or partly invented by the small local model.
 - The current implementation is designed for local use with Ollama.
 
+---
+
 ## Project Structure
 
 ```text
@@ -339,8 +351,11 @@ This project was built as a practical portfolio project to demonstrate hands-on 
 - Streamlit application development
 - Persistent local application state
 
+---
+
 ## Author
 
 **Mohammad Ahmad Elayyan**  
 Intelligent Systems Engineering Graduate  
-GitHub: [@MohammadElayyan117](https://github.com/MohammadElayyan117)
+GitHub: [@MohammadElayyan117](https://github.com/MohammadElayyan117)  
+LinkedIn: [mohammadelayyan1](https://www.linkedin.com/in/mohammadelayyan1/)
