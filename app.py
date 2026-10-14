@@ -969,8 +969,7 @@ if (
     # Grounded prompt
     # --------------------------------------------------
 
-    prompt = f"""
-You are a RAG assistant answering questions about an uploaded PDF document.
+    prompt = f"""You are a RAG assistant answering questions about an uploaded PDF document.
 
 Answer the user's exact question using ONLY the context provided below.
 
