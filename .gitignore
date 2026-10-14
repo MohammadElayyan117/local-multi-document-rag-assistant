@@ -31,3 +31,7 @@ evaluation_sample.json
 # OS files
 .DS_Store
 Thumbs.db
+evaluation/air2.pdf
+evaluation/answers.json
+evaluation/chroma_bench/
+__pycache__/
