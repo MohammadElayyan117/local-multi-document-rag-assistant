@@ -1,0 +1,181 @@
+﻿faithfulness,answer_relevancy,question,llm_context_precision_with_reference,factual_correctness(mode=f1),answerable,used_fallback,variant,run
+1.0,0.7460937408406716,"What is a robot, according to the slides?",0.999999999975,0.89,True,False,final,1
+0.75,0.8668603373289493,What does automation mean as a characteristic of robots?,0.9999999999,0.8,True,False,final,1
+1.0,0.9207347438769121,What does autonomy allow a robot to do?,0.99999999995,0.83,True,False,final,1
+0.4444444444444444,1.0000000000000002,What is the purpose of the control station or Human/Robot Interface (HRI)?,0.99999999995,0.67,True,False,final,1
+1.0,0.9999999999999994,How does a sonar sensor measure the distance to an object?,0.9999999999,0.86,True,False,final,1
+1.0,0.774109725108025,What do motors convert electricity into?,0.49999999995,1.0,True,False,final,1
+1.0,0.750807746043435,What can happen if a drive motor has insufficient torque?,0.99999999995,0.0,True,False,final,1
+1.0,1.0000000000000002,How is the voltage supplied to the robot's brushed drive motors controlled?,0.9999999999,0.67,True,False,final,1
+1.0,0.9448982513798451,What sensor is used in the described servos to measure the output gear shaft angle?,0.99999999995,0.67,True,False,final,1
+0.6666666666666666,0.8968340014203814,Why is a motor controller needed between the robot computer and its motors?,0.999999999975,0.8,True,False,final,1
+1.0,1.0000000000000002,What is the purpose of the heartbeat message in the robot software architecture?,0.9999999999,0.5,True,False,final,1
+1.0,0.7829529007285538,Which layer has the highest priority in the three-layer robot decision-making architecture?,0.0,1.0,True,False,final,1
+1.0,0.8249749459548469,Is ROS an operating system like Linux or Windows?,0.9999999999,1.0,True,False,final,1
+1.0,1.0,How does ROS's publish-subscribe communication paradigm work?,0.999999999975,1.0,True,False,final,1
+1.0,1.0,What is a workspace in ROS 2?,0.99999999995,1.0,True,False,final,1
+1.0,0.9442760491537617,What does Quality of Service (QoS) control in the DDS-based ROS 2 communication model?,0.9999999999,0.89,True,False,final,1
+0.3333333333333333,0.9595133125877329,What are ROS 2 topics used for?,0.4166666666458333,0.57,True,False,final,1
+1.0,0.6759134952427632,When should ROS 2 actions be used?,0.3333333333,0.67,True,False,final,1
+0.3333333333333333,0.8466861788373462,What is Colcon used for in ROS 2?,0.8055555555287036,0.8,True,False,final,1
+1.0,0.6331150129359863,What does sourcing a built ROS 2 workspace accomplish?,0.999999999975,0.67,True,False,final,1
+1.0,0.9550902127318254,Which five types of sensors or monitoring devices are listed for the robot?,0.5833333333041666,0.73,True,False,final,1
+1.0,0.7724882298089949,Which four wireless or radio technologies are mentioned for communicating with mobile robots?,0.9999999999,1.0,True,False,final,1
+1.0,1.0,What factors should be considered when selecting a motor for a robot drive system?,0.9999999999666667,0.67,True,False,final,1
+1.0,0.9557611226658533,"What four kinds of content can a ROS package contain, according to the slides?",0.7499999999625,1.0,True,False,final,1
+0.375,0.9999999999999997,What are the seven key concepts listed for the DDS-based ROS 2 communication model?,0.9999999999,0.0,True,False,final,1
+1.0,0.6402365932522159,Which three languages can be used to define a ROS 2 launch file?,0.9999999999,1.0,True,False,final,1
+1.0,0.0,What IP address is assigned to the Jetson Nano for remote access in the robot setup?,,,False,True,final,1
+0.0,0.0,What is the robot's battery capacity in milliamp-hours (mAh)?,,,False,True,final,1
+0.5,0.0,What numerical DDS Quality of Service history depth is configured for the example ROS 2 publisher?,,,False,True,final,1
+0.5,0.0,"At what publishing frequency, in hertz, does the example publisher_node.py send messages?",,,False,True,final,1
+1.0,0.8788250370614521,"What is a robot, according to the slides?",0.999999999975,0.89,True,False,baseline_a,1
+0.5,0.8757265629782037,What does automation mean as a characteristic of robots?,0.9999999999,0.67,True,False,baseline_a,1
+1.0,0.9035736469412728,What does autonomy allow a robot to do?,0.99999999995,0.83,True,False,baseline_a,1
+0.4444444444444444,1.0000000000000002,What is the purpose of the control station or Human/Robot Interface (HRI)?,0.99999999995,0.67,True,False,baseline_a,1
+1.0,0.9999999999999994,How does a sonar sensor measure the distance to an object?,0.9999999999,1.0,True,False,baseline_a,1
+1.0,0.774109725108025,What do motors convert electricity into?,0.49999999995,1.0,True,False,baseline_a,1
+1.0,0.9912688943271779,What can happen if a drive motor has insufficient torque?,0.99999999995,1.0,True,False,baseline_a,1
+1.0,1.0000000000000002,How is the voltage supplied to the robot's brushed drive motors controlled?,0.9999999999,0.67,True,False,baseline_a,1
+1.0,0.9423264368586034,What sensor is used in the described servos to measure the output gear shaft angle?,0.99999999995,0.5,True,False,baseline_a,1
+1.0,0.5506672225407421,Why is a motor controller needed between the robot computer and its motors?,0.999999999975,0.8,True,False,baseline_a,1
+1.0,1.0000000000000002,What is the purpose of the heartbeat message in the robot software architecture?,0.9999999999,0.4,True,False,baseline_a,1
+1.0,0.8270485468676494,Which layer has the highest priority in the three-layer robot decision-making architecture?,0.0,1.0,True,False,baseline_a,1
+1.0,0.8249749459548469,Is ROS an operating system like Linux or Windows?,0.9999999999,0.5,True,False,baseline_a,1
+1.0,0.4708031360192848,How does ROS's publish-subscribe communication paradigm work?,0.999999999975,1.0,True,False,baseline_a,1
+1.0,1.0,What is a workspace in ROS 2?,0.99999999995,1.0,True,False,baseline_a,1
+1.0,0.9419943873011815,What does Quality of Service (QoS) control in the DDS-based ROS 2 communication model?,0.9999999999,0.89,True,False,baseline_a,1
+0.5,0.9697452757637045,What are ROS 2 topics used for?,0.4166666666458333,0.75,True,False,baseline_a,1
+1.0,0.6593272352113605,When should ROS 2 actions be used?,0.3333333333,0.8,True,False,baseline_a,1
+0.8,0.7913818334417196,What is Colcon used for in ROS 2?,0.8055555555287036,0.5,True,False,baseline_a,1
+1.0,0.632965612035262,What does sourcing a built ROS 2 workspace accomplish?,0.999999999975,0.67,True,False,baseline_a,1
+1.0,0.9550902127318254,Which five types of sensors or monitoring devices are listed for the robot?,0.5833333333041666,0.73,True,False,baseline_a,1
+1.0,0.7724882298089949,Which four wireless or radio technologies are mentioned for communicating with mobile robots?,0.9999999999,1.0,True,False,baseline_a,1
+1.0,1.0,What factors should be considered when selecting a motor for a robot drive system?,0.9999999999666667,0.67,True,False,baseline_a,1
+0.5,0.0,"What four kinds of content can a ROS package contain, according to the slides?",0.7499999999625,0.33,True,True,baseline_a,1
+0.5,0.0,What are the seven key concepts listed for the DDS-based ROS 2 communication model?,0.9999999999,0.0,True,True,baseline_a,1
+1.0,0.9556988996629995,Which three languages can be used to define a ROS 2 launch file?,0.9999999999,0.0,True,False,baseline_a,1
+1.0,0.0,What IP address is assigned to the Jetson Nano for remote access in the robot setup?,,,False,True,baseline_a,1
+0.0,0.0,What is the robot's battery capacity in milliamp-hours (mAh)?,,,False,True,baseline_a,1
+1.0,0.0,What numerical DDS Quality of Service history depth is configured for the example ROS 2 publisher?,,,False,True,baseline_a,1
+0.5,0.0,"At what publishing frequency, in hertz, does the example publisher_node.py send messages?",,,False,True,baseline_a,1
+1.0,0.7956925910373273,"What is a robot, according to the slides?",0.9166666666361111,0.89,True,False,baseline_b,1
+0.75,0.8668603373289495,What does automation mean as a characteristic of robots?,0.9999999999,0.8,True,False,baseline_b,1
+1.0,0.9207347438769121,What does autonomy allow a robot to do?,0.99999999995,0.83,True,False,baseline_b,1
+0.6666666666666666,1.0000000000000002,What is the purpose of the control station or Human/Robot Interface (HRI)?,0.99999999995,0.67,True,False,baseline_b,1
+1.0,0.9999999999999994,How does a sonar sensor measure the distance to an object?,0.9999999999,1.0,True,False,baseline_b,1
+1.0,0.774109725108025,What do motors convert electricity into?,0.49999999995,1.0,True,False,baseline_b,1
+1.0,0.6906174985675785,What can happen if a drive motor has insufficient torque?,0.99999999995,0.0,True,False,baseline_b,1
+1.0,1.0000000000000002,How is the voltage supplied to the robot's brushed drive motors controlled?,0.9999999999,0.67,True,False,baseline_b,1
+1.0,0.9423264368586034,What sensor is used in the described servos to measure the output gear shaft angle?,0.99999999995,0.5,True,False,baseline_b,1
+0.6666666666666666,0.8955323957300529,Why is a motor controller needed between the robot computer and its motors?,0.999999999975,0.8,True,False,baseline_b,1
+1.0,1.0000000000000002,What is the purpose of the heartbeat message in the robot software architecture?,0.9999999999,0.4,True,False,baseline_b,1
+1.0,0.7829529007285538,Which layer has the highest priority in the three-layer robot decision-making architecture?,0.0,1.0,True,False,baseline_b,1
+1.0,0.8249749459548469,Is ROS an operating system like Linux or Windows?,0.9999999999,1.0,True,False,baseline_b,1
+1.0,1.0,How does ROS's publish-subscribe communication paradigm work?,0.999999999975,1.0,True,False,baseline_b,1
+1.0,1.0,What is a workspace in ROS 2?,0.99999999995,1.0,True,False,baseline_b,1
+1.0,0.9595047205391163,What does Quality of Service (QoS) control in the DDS-based ROS 2 communication model?,0.9999999999,0.89,True,False,baseline_b,1
+1.0,0.9492813494117615,What are ROS 2 topics used for?,0.249999999975,0.57,True,False,baseline_b,1
+1.0,0.6544218197519571,When should ROS 2 actions be used?,0.249999999975,0.57,True,False,baseline_b,1
+0.5,0.8466861788373462,What is Colcon used for in ROS 2?,0.7499999999625,0.33,True,False,baseline_b,1
+1.0,0.6331150129359863,What does sourcing a built ROS 2 workspace accomplish?,0.999999999975,1.0,True,False,baseline_b,1
+1.0,0.9550902127318254,Which five types of sensors or monitoring devices are listed for the robot?,0.5833333333041666,0.73,True,False,baseline_b,1
+1.0,0.7464878854844206,Which four wireless or radio technologies are mentioned for communicating with mobile robots?,0.9999999999,1.0,True,False,baseline_b,1
+1.0,1.0,What factors should be considered when selecting a motor for a robot drive system?,0.9999999999666667,0.67,True,False,baseline_b,1
+1.0,0.9182608062670484,"What four kinds of content can a ROS package contain, according to the slides?",0.7499999999625,1.0,True,False,baseline_b,1
+0.25,0.9999999999999997,What are the seven key concepts listed for the DDS-based ROS 2 communication model?,0.49999999995,0.75,True,False,baseline_b,1
+1.0,0.6402365932522159,Which three languages can be used to define a ROS 2 launch file?,0.9999999999,1.0,True,False,baseline_b,1
+1.0,0.0,What IP address is assigned to the Jetson Nano for remote access in the robot setup?,,,False,True,baseline_b,1
+1.0,0.0,What is the robot's battery capacity in milliamp-hours (mAh)?,,,False,True,baseline_b,1
+0.5,0.0,What numerical DDS Quality of Service history depth is configured for the example ROS 2 publisher?,,,False,True,baseline_b,1
+0.5,0.0,"At what publishing frequency, in hertz, does the example publisher_node.py send messages?",,,False,True,baseline_b,1
+1.0,0.839815056138214,"What is a robot, according to the slides?",0.999999999975,0.89,True,False,final,2
+0.75,0.8757265629782037,What does automation mean as a characteristic of robots?,0.9999999999,0.8,True,False,final,2
+1.0,0.9214822033686079,What does autonomy allow a robot to do?,0.99999999995,0.83,True,False,final,2
+0.6666666666666666,1.0000000000000002,What is the purpose of the control station or Human/Robot Interface (HRI)?,0.99999999995,0.67,True,False,final,2
+1.0,0.9999999999999994,How does a sonar sensor measure the distance to an object?,0.9999999999,0.75,True,False,final,2
+1.0,0.8020528183618048,What do motors convert electricity into?,0.49999999995,1.0,True,False,final,2
+1.0,0.7354013093476052,What can happen if a drive motor has insufficient torque?,0.99999999995,0.0,True,False,final,2
+1.0,1.0000000000000002,How is the voltage supplied to the robot's brushed drive motors controlled?,0.9999999999,0.67,True,False,final,2
+1.0,0.9448982513798448,What sensor is used in the described servos to measure the output gear shaft angle?,0.99999999995,0.5,True,False,final,2
+0.6666666666666666,0.895532395730053,Why is a motor controller needed between the robot computer and its motors?,0.999999999975,0.8,True,False,final,2
+1.0,1.0000000000000002,What is the purpose of the heartbeat message in the robot software architecture?,0.9999999999,0.4,True,False,final,2
+1.0,0.7829529007285538,Which layer has the highest priority in the three-layer robot decision-making architecture?,0.0,1.0,True,False,final,2
+1.0,0.8249749459548469,Is ROS an operating system like Linux or Windows?,0.9999999999,1.0,True,False,final,2
+1.0,1.0,How does ROS's publish-subscribe communication paradigm work?,0.999999999975,1.0,True,False,final,2
+1.0,1.0,What is a workspace in ROS 2?,0.99999999995,1.0,True,False,final,2
+1.0,0.945276753578525,What does Quality of Service (QoS) control in the DDS-based ROS 2 communication model?,0.9999999999,0.89,True,False,final,2
+0.3333333333333333,0.9492813494117615,What are ROS 2 topics used for?,0.4166666666458333,0.57,True,False,final,2
+1.0,0.6544218197519571,When should ROS 2 actions be used?,0.3333333333,0.8,True,False,final,2
+0.3333333333333333,0.8466861788373462,What is Colcon used for in ROS 2?,0.8055555555287036,0.8,True,False,final,2
+1.0,0.6331150129359863,What does sourcing a built ROS 2 workspace accomplish?,0.999999999975,0.67,True,False,final,2
+1.0,0.9550902127318254,Which five types of sensors or monitoring devices are listed for the robot?,0.5833333333041666,0.73,True,False,final,2
+1.0,0.757820122850735,Which four wireless or radio technologies are mentioned for communicating with mobile robots?,0.9999999999,1.0,True,False,final,2
+1.0,1.0,What factors should be considered when selecting a motor for a robot drive system?,0.9999999999666667,0.67,True,False,final,2
+1.0,0.9406747259046974,"What four kinds of content can a ROS package contain, according to the slides?",0.7499999999625,1.0,True,False,final,2
+0.375,0.9999999999999997,What are the seven key concepts listed for the DDS-based ROS 2 communication model?,0.9999999999,0.0,True,False,final,2
+1.0,0.6412290608276278,Which three languages can be used to define a ROS 2 launch file?,0.9999999999,1.0,True,False,final,2
+1.0,0.0,What IP address is assigned to the Jetson Nano for remote access in the robot setup?,,,False,True,final,2
+1.0,0.0,What is the robot's battery capacity in milliamp-hours (mAh)?,,,False,True,final,2
+0.5,0.0,What numerical DDS Quality of Service history depth is configured for the example ROS 2 publisher?,,,False,True,final,2
+0.5,0.0,"At what publishing frequency, in hertz, does the example publisher_node.py send messages?",,,False,True,final,2
+1.0,0.8347025719605655,"What is a robot, according to the slides?",0.999999999975,0.89,True,False,baseline_a,2
+0.5,0.8757265629782037,What does automation mean as a characteristic of robots?,0.9999999999,0.67,True,False,baseline_a,2
+1.0,0.911508687210777,What does autonomy allow a robot to do?,0.99999999995,0.83,True,False,baseline_a,2
+0.4444444444444444,1.0000000000000002,What is the purpose of the control station or Human/Robot Interface (HRI)?,0.99999999995,0.67,True,False,baseline_a,2
+1.0,0.9999999999999994,How does a sonar sensor measure the distance to an object?,0.9999999999,1.0,True,False,baseline_a,2
+1.0,0.774109725108025,What do motors convert electricity into?,0.49999999995,1.0,True,False,baseline_a,2
+1.0,0.9611601043455775,What can happen if a drive motor has insufficient torque?,0.99999999995,1.0,True,False,baseline_a,2
+1.0,1.0000000000000002,How is the voltage supplied to the robot's brushed drive motors controlled?,0.9999999999,0.67,True,False,baseline_a,2
+1.0,0.9423264368586034,What sensor is used in the described servos to measure the output gear shaft angle?,0.99999999995,0.5,True,False,baseline_a,2
+1.0,0.5476349014653318,Why is a motor controller needed between the robot computer and its motors?,0.999999999975,0.8,True,False,baseline_a,2
+1.0,1.0000000000000002,What is the purpose of the heartbeat message in the robot software architecture?,0.9999999999,0.4,True,False,baseline_a,2
+1.0,0.8113931531810866,Which layer has the highest priority in the three-layer robot decision-making architecture?,0.0,1.0,True,False,baseline_a,2
+1.0,0.8249749459548469,Is ROS an operating system like Linux or Windows?,0.9999999999,0.5,True,False,baseline_a,2
+1.0,0.4856100264637943,How does ROS's publish-subscribe communication paradigm work?,0.999999999975,1.0,True,False,baseline_a,2
+1.0,1.0,What is a workspace in ROS 2?,0.99999999995,1.0,True,False,baseline_a,2
+1.0,0.9469745649367552,What does Quality of Service (QoS) control in the DDS-based ROS 2 communication model?,0.9999999999,0.89,True,False,baseline_a,2
+0.5,0.9595133125877329,What are ROS 2 topics used for?,0.4166666666458333,0.75,True,False,baseline_a,2
+1.0,0.6383480590581279,When should ROS 2 actions be used?,0.3333333333,0.67,True,False,baseline_a,2
+0.8,0.7913818334417196,What is Colcon used for in ROS 2?,0.8055555555287036,0.5,True,False,baseline_a,2
+1.0,0.632965612035262,What does sourcing a built ROS 2 workspace accomplish?,0.999999999975,0.67,True,False,baseline_a,2
+1.0,0.9550902127318254,Which five types of sensors or monitoring devices are listed for the robot?,0.5833333333041666,0.73,True,False,baseline_a,2
+1.0,0.7620617491246627,Which four wireless or radio technologies are mentioned for communicating with mobile robots?,0.9999999999,1.0,True,False,baseline_a,2
+1.0,1.0,What factors should be considered when selecting a motor for a robot drive system?,0.9999999999666667,0.67,True,False,baseline_a,2
+0.5,0.0,"What four kinds of content can a ROS package contain, according to the slides?",0.7499999999625,0.33,True,True,baseline_a,2
+0.5,0.0,What are the seven key concepts listed for the DDS-based ROS 2 communication model?,0.9999999999,0.0,True,True,baseline_a,2
+1.0,0.9283312004485378,Which three languages can be used to define a ROS 2 launch file?,0.9999999999,0.0,True,False,baseline_a,2
+1.0,0.0,What IP address is assigned to the Jetson Nano for remote access in the robot setup?,,,False,True,baseline_a,2
+1.0,0.0,What is the robot's battery capacity in milliamp-hours (mAh)?,,,False,True,baseline_a,2
+0.5,0.0,What numerical DDS Quality of Service history depth is configured for the example ROS 2 publisher?,,,False,True,baseline_a,2
+0.5,0.0,"At what publishing frequency, in hertz, does the example publisher_node.py send messages?",,,False,True,baseline_a,2
+1.0,0.8347025719605655,"What is a robot, according to the slides?",0.9166666666361111,0.89,True,False,baseline_b,2
+0.75,0.8757265629782037,What does automation mean as a characteristic of robots?,0.9999999999,0.8,True,False,baseline_b,2
+1.0,0.9207347438769121,What does autonomy allow a robot to do?,0.99999999995,0.83,True,False,baseline_b,2
+0.6666666666666666,1.0000000000000002,What is the purpose of the control station or Human/Robot Interface (HRI)?,0.99999999995,0.67,True,False,baseline_b,2
+1.0,0.9999999999999994,How does a sonar sensor measure the distance to an object?,0.9999999999,0.75,True,False,baseline_b,2
+1.0,0.774109725108025,What do motors convert electricity into?,0.49999999995,1.0,True,False,baseline_b,2
+1.0,0.6927288606140655,What can happen if a drive motor has insufficient torque?,0.99999999995,0.0,True,False,baseline_b,2
+1.0,1.0000000000000002,How is the voltage supplied to the robot's brushed drive motors controlled?,0.9999999999,0.67,True,False,baseline_b,2
+1.0,0.9474700659010865,What sensor is used in the described servos to measure the output gear shaft angle?,0.99999999995,0.5,True,False,baseline_b,2
+0.6666666666666666,0.8933940624862164,Why is a motor controller needed between the robot computer and its motors?,0.999999999975,0.8,True,False,baseline_b,2
+1.0,1.0000000000000002,What is the purpose of the heartbeat message in the robot software architecture?,0.9999999999,0.4,True,False,baseline_b,2
+1.0,0.7829529007285538,Which layer has the highest priority in the three-layer robot decision-making architecture?,0.0,1.0,True,False,baseline_b,2
+1.0,0.8249749459548469,Is ROS an operating system like Linux or Windows?,0.9999999999,1.0,True,False,baseline_b,2
+1.0,1.0,How does ROS's publish-subscribe communication paradigm work?,0.999999999975,1.0,True,False,baseline_b,2
+1.0,1.0,What is a workspace in ROS 2?,0.99999999995,0.8,True,False,baseline_b,2
+1.0,0.9489196924031872,What does Quality of Service (QoS) control in the DDS-based ROS 2 communication model?,0.9999999999,0.89,True,False,baseline_b,2
+1.0,0.9492813494117615,What are ROS 2 topics used for?,0.249999999975,0.57,True,False,baseline_b,2
+1.0,0.6500013796249969,When should ROS 2 actions be used?,0.249999999975,0.67,True,False,baseline_b,2
+0.5,0.8466861788373462,What is Colcon used for in ROS 2?,0.7499999999625,0.22,True,False,baseline_b,2
+1.0,0.6350345514839515,What does sourcing a built ROS 2 workspace accomplish?,0.999999999975,0.8,True,False,baseline_b,2
+1.0,0.9550902127318254,Which five types of sensors or monitoring devices are listed for the robot?,0.5833333333041666,0.73,True,False,baseline_b,2
+1.0,0.7724882298089949,Which four wireless or radio technologies are mentioned for communicating with mobile robots?,0.9999999999,1.0,True,False,baseline_b,2
+1.0,1.0,What factors should be considered when selecting a motor for a robot drive system?,0.9999999999666667,0.67,True,False,baseline_b,2
+1.0,0.9472833044703618,"What four kinds of content can a ROS package contain, according to the slides?",0.7499999999625,1.0,True,False,baseline_b,2
+0.25,0.9999999999999997,What are the seven key concepts listed for the DDS-based ROS 2 communication model?,0.49999999995,0.75,True,False,baseline_b,2
+1.0,0.6402365932522159,Which three languages can be used to define a ROS 2 launch file?,0.9999999999,1.0,True,False,baseline_b,2
+1.0,0.0,What IP address is assigned to the Jetson Nano for remote access in the robot setup?,,,False,True,baseline_b,2
+0.0,0.0,What is the robot's battery capacity in milliamp-hours (mAh)?,,,False,True,baseline_b,2
+0.5,0.0,What numerical DDS Quality of Service history depth is configured for the example ROS 2 publisher?,,,False,True,baseline_b,2
+0.5,0.0,"At what publishing frequency, in hertz, does the example publisher_node.py send messages?",,,False,True,baseline_b,2

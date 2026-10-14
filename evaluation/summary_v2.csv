@@ -1,0 +1,5 @@
+﻿run,variant,faithfulness,answer_relevancy,llm_context_precision_with_reference,factual_correctness(mode=f1)
+1,final,0.8375,0.7665,0.8611,0.7392
+1,final_chunk800,0.8801,0.7085,0.8526,0.6958
+1,final_k6,0.8647,0.7459,0.8507,0.7469
+1,final_partial,0.8861,0.7797,0.8611,0.7365

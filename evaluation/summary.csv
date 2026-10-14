@@ -1,0 +1,7 @@
+﻿run,variant,faithfulness,answer_relevancy,llm_context_precision_with_reference,factual_correctness(mode=f1)
+1,baseline_a,0.8581,0.6906,0.8611,0.7027
+1,baseline_b,0.8944,0.7599,0.8269,0.7719
+1,final,0.8301,0.763,0.8611,0.7573
+2,baseline_a,0.8748,0.6861,0.8611,0.6977
+2,baseline_b,0.8611,0.7631,0.8269,0.7465
+2,final,0.8708,0.7649,0.8611,0.7477

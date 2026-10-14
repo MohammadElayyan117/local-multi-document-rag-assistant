@@ -1,0 +1,182 @@
+[
+  {
+    "question": "What is a robot, according to the slides?",
+    "reference": "A robot is a machine capable of carrying out complex actions and behaviours by itself; most robots are controlled by a computer or digital programmable device.",
+    "answerable": true,
+    "source_page": 3
+  },
+  {
+    "question": "What does automation mean as a characteristic of robots?",
+    "reference": "Robots can operate automatically based on pre-programmed instructions, allowing repetitive or dangerous tasks to be done consistently.",
+    "answerable": true,
+    "source_page": 3
+  },
+  {
+    "question": "What does autonomy allow a robot to do?",
+    "reference": "Make its own decisions and adapt to changing, unforeseen circumstances without human intervention or reliance on fixed instructions.",
+    "answerable": true,
+    "source_page": 3
+  },
+  {
+    "question": "What is the purpose of the control station or Human/Robot Interface (HRI)?",
+    "reference": "It lets an operator send commands to the robot and receive telemetry in the form of data, video, or audio.",
+    "answerable": true,
+    "source_page": 6
+  },
+  {
+    "question": "How does a sonar sensor measure the distance to an object?",
+    "reference": "It sends a pulse of sound energy and measures the time delay before the echo returns; the delay is used to determine distance.",
+    "answerable": true,
+    "source_page": 7
+  },
+  {
+    "question": "What do motors convert electricity into?",
+    "reference": "Motion.",
+    "answerable": true,
+    "source_page": 8
+  },
+  {
+    "question": "What can happen if a drive motor has insufficient torque?",
+    "reference": "The robot may bog down or the motor may stall.",
+    "answerable": true,
+    "source_page": 8
+  },
+  {
+    "question": "How is the voltage supplied to the robot's brushed drive motors controlled?",
+    "reference": "By Pulse Width Modulation (PWM).",
+    "answerable": true,
+    "source_page": 9
+  },
+  {
+    "question": "What sensor is used in the described servos to measure the output gear shaft angle?",
+    "reference": "A potentiometer (variable resistor).",
+    "answerable": true,
+    "source_page": 11
+  },
+  {
+    "question": "Why is a motor controller needed between the robot computer and its motors?",
+    "reference": "The motors require more voltage and current than the control computer can provide; the motor controller converts small digital control signals into larger analogue voltage and current.",
+    "answerable": true,
+    "source_page": 12
+  },
+  {
+    "question": "What is the purpose of the heartbeat message in the robot software architecture?",
+    "reference": "It is sent from the control station to the robot to check whether the onboard computer is working.",
+    "answerable": true,
+    "source_page": 13
+  },
+  {
+    "question": "Which layer has the highest priority in the three-layer robot decision-making architecture?",
+    "reference": "The lowest-level layer has the highest priority.",
+    "answerable": true,
+    "source_page": 13
+  },
+  {
+    "question": "Is ROS an operating system like Linux or Windows?",
+    "reference": "No. ROS is a middleware layer that connects different programs so they can work together to control a robot.",
+    "answerable": true,
+    "source_page": 14
+  },
+  {
+    "question": "How does ROS's publish-subscribe communication paradigm work?",
+    "reference": "One program publishes data, and other programs subscribe to that data and receive messages when new data becomes available.",
+    "answerable": true,
+    "source_page": 15
+  },
+  {
+    "question": "What is a workspace in ROS 2?",
+    "reference": "A directory that contains packages.",
+    "answerable": true,
+    "source_page": 16
+  },
+  {
+    "question": "What does Quality of Service (QoS) control in the DDS-based ROS 2 communication model?",
+    "reference": "Communication characteristics such as time limit, reliability, continuity, and history.",
+    "answerable": true,
+    "source_page": 17
+  },
+  {
+    "question": "What are ROS 2 topics used for?",
+    "reference": "Communication channels for nodes to exchange messages, particularly continuous streams such as sensor data and robot state.",
+    "answerable": true,
+    "source_page": 20
+  },
+  {
+    "question": "When should ROS 2 actions be used?",
+    "reference": "For discrete behaviors that move a robot or for longer-running behaviors that provide feedback during execution.",
+    "answerable": true,
+    "source_page": 21
+  },
+  {
+    "question": "What is Colcon used for in ROS 2?",
+    "reference": "It is a build tool and command-line utility used to build, test, and use multiple software packages efficiently within a workspace.",
+    "answerable": true,
+    "source_page": 21
+  },
+  {
+    "question": "What does sourcing a built ROS 2 workspace accomplish?",
+    "reference": "It adds custom packages on top of the global ROS 2 installation so ROS 2 can find them; after rebuilding, re-sourcing may be needed for changes to take effect.",
+    "answerable": true,
+    "source_page": 31
+  },
+  {
+    "question": "Which five types of sensors or monitoring devices are listed for the robot?",
+    "reference": "A wide-angle video camera, a microphone, an angle sensor, an emergency stop button, and a voltage monitor.",
+    "answerable": true,
+    "source_page": 7
+  },
+  {
+    "question": "Which four wireless or radio technologies are mentioned for communicating with mobile robots?",
+    "reference": "Wi-Fi, cellular data services, Bluetooth, and Zigbee.",
+    "answerable": true,
+    "source_page": 8
+  },
+  {
+    "question": "What factors should be considered when selecting a motor for a robot drive system?",
+    "reference": "Torque, speed, duty cycle, size and weight, control, voltage, noise, and cost.",
+    "answerable": true,
+    "source_page": 9
+  },
+  {
+    "question": "What four kinds of content can a ROS package contain, according to the slides?",
+    "reference": "ROS runtime processes (nodes), a ROS-dependent library, datasets, and configuration files.",
+    "answerable": true,
+    "source_page": 16
+  },
+  {
+    "question": "What are the seven key concepts listed for the DDS-based ROS 2 communication model?",
+    "reference": "Participant, Publisher, Subscriber, DataWriter, DataReader, Topic, and Quality of Service.",
+    "answerable": true,
+    "source_page": 17
+  },
+  {
+    "question": "Which three languages can be used to define a ROS 2 launch file?",
+    "reference": "YAML, Python, and XML.",
+    "answerable": true,
+    "source_page": 21
+  },
+  {
+    "question": "What IP address is assigned to the Jetson Nano for remote access in the robot setup?",
+    "reference": "Not specified in the document.",
+    "answerable": false,
+    "source_page": null
+  },
+  {
+    "question": "What is the robot's battery capacity in milliamp-hours (mAh)?",
+    "reference": "Not specified in the document.",
+    "answerable": false,
+    "source_page": null
+  },
+  {
+    "question": "What numerical DDS Quality of Service history depth is configured for the example ROS 2 publisher?",
+    "reference": "Not specified in the document.",
+    "answerable": false,
+    "source_page": null
+  },
+  {
+    "question": "At what publishing frequency, in hertz, does the example publisher_node.py send messages?",
+    "reference": "Not specified in the document.",
+    "answerable": false,
+    "source_page": null
+  }
+]
